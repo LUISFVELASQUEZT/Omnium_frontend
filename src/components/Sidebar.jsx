@@ -26,7 +26,7 @@ const Logout = () => {
   };
   return (
     <li onClick={() => deleteToken()}>
-      <NavLink to='/auth/login' className='sidebar-route text-red-700'>
+      <NavLink to='/Index1' className='sidebar-route text-red-700'>
         <div className='flex items-center'>
           <i className='fas fa-sign-out-alt' />
           <span className='text-sm  ml-2'>Cerrar Sesión</span>
@@ -39,8 +39,8 @@ const Logout = () => {
 const Logo = () => {
   return (
     <div className='py-3 w-full flex flex-col items-center justify-center'>
-      <img src='logo.png' alt='Logo' className='h-16' />
-      <span className='my-2 text-xl font-bold text-center'>Título de Mi Aplicación</span>
+      <img src='Logo_Omnium.png' alt='Logo' className='h-16' />
+      <span className='my-2 text-xl font-bold text-center'>Gestión de Proyectos Omnium</span>
     </div>
   );
 };
