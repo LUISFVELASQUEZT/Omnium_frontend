@@ -6,8 +6,6 @@ import img2 from "../components/img/Imagen2.jpg";
 import img3 from "../components/img/Imagen3.jpg";
 import Image from "react-bootstrap/Image";
 import "../styles/Carousel.css";
-import ButtonLoading from "components/ButtonLoading";
-
 import { Grid } from "@material-ui/core";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -41,37 +39,24 @@ const Index = () => {
                 <img src={img3} alt="img3" height="300px" width="200px" />
               </div>
             </Carousel>
-            
-              <ul class="flex">
-                <li class="flex-1 mr-2">
-                  <a
-                    class="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white"
-                    href="auth/login"
-                  >
-                    Ingresar
-                  </a>
-                </li>
-                <li class="flex-1 mr-2">
-                  <a
-                    class="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white"
-                    href="auth/register"
-                  >
-                    Registrarse
-                  </a>
-                </li>
-              </ul>
-            
-            {/* <div class="flex space-x-10">
-              <button
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                href="../pages/auth/login"
-              >
-                Ingresar
-              </button>
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Registrarse
-              </button>
-            </div> */}
+            <ul class="flex">
+              <li class="flex-1 mr-2">
+                <a
+                  class="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white"
+                  href="auth/login"
+                >
+                  Ingresar
+                </a>
+              </li>
+              <li class="flex-1 mr-2">
+                <a
+                  class="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white"
+                  href="auth/register"
+                >
+                  Registrarse
+                </a>
+              </li>
+            </ul>
           </Grid>
         </Col>
       </Row>
@@ -80,9 +65,3 @@ const Index = () => {
 };
 
 export default Index;
-
-/* const Index = () => {
-  return <div>Pagina Index</div>;
-};
-
-export default Index; */
