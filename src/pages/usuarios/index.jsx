@@ -18,6 +18,10 @@ const IndexUsuarios = () => {
   if (loading) return <div>Cargando....</div>;
 
   return (
+    <div className='p-10 flex flex-col'>
+        <div className='flex w-full items-center justify-center'>
+          <h1 className='text-2xl font-bold text-gray-900'>Lista de Usuarios</h1>
+        </div>
     <PrivateRoute roleList={['ADMINISTRADOR']}>
       <div>
         Datos Usuarios:
@@ -61,6 +65,7 @@ const IndexUsuarios = () => {
         </table>
       </div>
     </PrivateRoute>
+    </div>
   );
 };
 

@@ -11,18 +11,21 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import Index from "pages/Index";
 import Index1 from "pages/Index1";
-import Page2 from "pages/Page2";
+//import Page2 from "pages/Page2";
 import IndexCategory1 from "pages/category1/Index";
 import Category1 from "pages/category1/CategoryPage1";
 import IndexUsuarios from "pages/usuarios";
 import EditarUsuario from "pages/usuarios/editar";
-import "styles/globals.css";
-import "styles/tabla.css";
 import AuthLayout from "layouts/AuthLayout";
 import Register from "pages/auth/register";
 import Login from "pages/auth/login";
 import { AuthContext } from "context/authContext";
+import IndexProyectos from "pages/proyectos/Index";
 import jwt_decode from "jwt-decode";
+import "styles/globals.css";
+import "styles/tabla.css";
+import NuevoProyecto from "pages/proyectos/NuevoProyecto";
+import IndexInscripciones from "pages/inscripciones";
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -80,9 +83,9 @@ function App() {
       <AuthContext.Provider value={{ authToken, setAuthToken, setToken }}>
         <UserContext.Provider value={{ userData, setUserData }}>
           <BrowserRouter>
-            <Routes>
+            {/* <Routes>
               <Route path="/Index1" element={<Index1 />} />
-            </Routes>
+            </Routes> */}
             <Routes>
               <Route path="/" element={<PrivateLayout />}>
                 <Route path="" element={<Index />} />
@@ -91,7 +94,9 @@ function App() {
                   path="/usuarios/editar/:_id"
                   element={<EditarUsuario />}
                 />
-                <Route path="page2" element={<Page2 />} />
+                <Route path="/proyectos" element={<IndexProyectos />} />
+                <Route path="/proyectos/nuevo" element={<NuevoProyecto />} />
+                <Route path="/inscripciones" element={<IndexInscripciones />} />
                 <Route path="category1" element={<IndexCategory1 />} />
                 <Route path="category1/page1" element={<Category1 />} />
               </Route>
