@@ -39,7 +39,7 @@ const Index = () => {
                 <img src={img3} alt="img3" height="300px" width="200px" />
               </div>
             </Carousel>
-            <ul class="flex">
+            {/* <ul class="flex">
               <li class="flex-1 mr-2">
                 <a
                   class="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white"
@@ -56,7 +56,7 @@ const Index = () => {
                   Registrarse
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </Grid>
         </Col>
       </Row>

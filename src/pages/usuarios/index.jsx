@@ -22,7 +22,7 @@ const IndexUsuarios = () => {
         <div className='flex w-full items-center justify-center'>
           <h1 className='text-2xl font-bold text-gray-900'>Lista de Usuarios</h1>
         </div>
-    <PrivateRoute roleList={['ADMINISTRADOR']}>
+    <PrivateRoute roleList={['ADMINISTRADOR','ESTUDIANTE']}>
       <div>
         Datos Usuarios:
         <table className='tabla'>

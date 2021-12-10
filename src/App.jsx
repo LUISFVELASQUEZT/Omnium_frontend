@@ -10,7 +10,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Index from "pages/Index";
-import Index1 from "pages/Index1";
+import Carousel from "pages/Carousel";
 //import Page2 from "pages/Page2";
 import IndexCategory1 from "pages/category1/Index";
 import Category1 from "pages/category1/CategoryPage1";
@@ -83,12 +83,9 @@ function App() {
       <AuthContext.Provider value={{ authToken, setAuthToken, setToken }}>
         <UserContext.Provider value={{ userData, setUserData }}>
           <BrowserRouter>
-            {/* <Routes>
-              <Route path="/Index1" element={<Index1 />} />
-            </Routes> */}
             <Routes>
               <Route path="/" element={<PrivateLayout />}>
-                <Route path="" element={<Index />} />
+                <Route path="" element={<Carousel />} />
                 <Route path="/usuarios" element={<IndexUsuarios />} />
                 <Route
                   path="/usuarios/editar/:_id"

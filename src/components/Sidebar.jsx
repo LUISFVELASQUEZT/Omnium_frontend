@@ -14,8 +14,10 @@ const SidebarLinks = () => {
       <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
         <SidebarRoute to='/inscripciones' title='Aprobacion Inscripciones' icon='fas fa-user' />
       </PrivateComponent>
-      <SidebarRoute to='/page2' title='Pagina2' icon='fas fa-smile-wink' />
-      <SidebarRoute to='/category1' title='Proyectos de un líder' icon='fab fa-amazon' />
+      <PrivateComponent roleList={['ESTUDIANTE']}>
+      <SidebarRoute to='/usuarios/editar' title='Editar Usuario' icon='fas fa-smile-wink' />
+      </PrivateComponent>
+      <SidebarRoute to='/category1' title='Proyectos de un líder' icon='fas fa-clipboard-list' />
       <SidebarRoute to='/category1/page1' title='Test' icon='fas fa-car' />
       <Logout />
     </ul>
@@ -30,7 +32,7 @@ const Logout = () => {
   };
   return (
     <li onClick={() => deleteToken()}>
-      <NavLink to='/Index1' className='sidebar-route text-red-700'>
+      <NavLink to='/auth/login' className='sidebar-route text-red-700'>
         <div className='flex items-center'>
           <i className='fas fa-sign-out-alt' />
           <span className='text-sm  ml-2'>Cerrar Sesión</span>
