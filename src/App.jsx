@@ -67,6 +67,7 @@ function App() {
   useEffect(() => {
     if (authToken) {
       const decoded = jwt_decode(authToken);
+      console.log("Hello", decoded.correo, " your identification is: ", decoded.identificacion , " and your role is ", decoded.rol);
       setUserData({
         _id: decoded._id,
         nombre: decoded.nombre,
