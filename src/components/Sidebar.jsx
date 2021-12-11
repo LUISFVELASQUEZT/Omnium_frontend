@@ -2,8 +2,17 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from 'context/authContext';
 import PrivateComponent from './PrivateComponent';
+import { useUser } from 'context/userContext';
+
+let today = new Date();
+let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+let dateTime = date+' '+time;
 
 const SidebarLinks = () => {
+  const { userData } = useUser();
+  console.log( " at " , dateTime, " From SiderBar " , userData.correo, " es un ", userData.rol);
+  
   return (
     <ul className='mt-12'>
       <SidebarRoute to='' title='Inicio' icon='fas fa-home' />
