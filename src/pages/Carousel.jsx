@@ -4,7 +4,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import img1 from "../components/img/Imagen1.jpg";
 import img2 from "../components/img/Imagen2.jpg";
 import img3 from "../components/img/Imagen3.jpg";
-import Image from "react-bootstrap/Image";
 import "../styles/Carousel.css";
 import { Grid } from "@material-ui/core";
 import Row from "react-bootstrap/Row";
@@ -22,7 +21,19 @@ const Index = () => {
             alignItems="center"
             style={{ minHeight: "20vh" }}
           >
-            <Image src={require("../pages/auth/Logo_Omnium.png").default} />
+            <br/>
+            <br/>
+            <figure class="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
+                <div class="pt-6 md:p-8 text-center">
+                  <blockquote>
+                    <p class="text-lg text center font-medium">
+                      “En primer lugar, ten un ideal definido, claro y práctico; una meta, un objetivo;
+                      en segundo lugar, dispón de los medios necesarios para alcanzar tus fines; sabiduría, dinero, materiales y métodos
+                      y en tercer lugar, emplea todos tus medios para ese fin.” – Aristóteles
+                    </p>
+                  </blockquote>
+                </div>
+            </figure>
             <Carousel
               className="main-slide"
               autoPlay="true"
@@ -39,6 +50,11 @@ const Index = () => {
                 <img src={img3} alt="img3" height="300px" width="200px" />
               </div>
             </Carousel>
+
+            <div class="pt-6 md:p-8 font-bold text-center">
+            OMNIUM <br/> Work Smarter 
+            </div>
+            
             {/* <ul class="flex">
               <li class="flex-1 mr-2">
                 <a

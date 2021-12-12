@@ -24,11 +24,11 @@ const SidebarLinks = () => {
         <SidebarRoute to='/inscripciones' title='Aprobacion Inscripciones' icon='fas fa-user' />
       </PrivateComponent>
       <PrivateComponent roleList={['ESTUDIANTE']}>
-      <SidebarRoute to='/usuarios/editar' title='Editar Usuario' icon='fas fa-smile-wink' />
+      <SidebarRoute to='/category1/page1' title='Inscripciones' icon='fas fa-book' />
+      <SidebarRoute to='/usuarios/editar' title='Editar Usuario' icon='fas fa-pen' />
       </PrivateComponent>
-      <SidebarRoute to='/category1' title='Proyectos de un líder' icon='fas fa-clipboard-list' />
-      <SidebarRoute to='/category1/page1' title='Test' icon='fas fa-car' />
-      <Logout />
+      <SidebarRoute to='/category1' title='Varios' icon='fas fa-clipboard-list' />
+     <Logout />
     </ul>
   );  
 };
