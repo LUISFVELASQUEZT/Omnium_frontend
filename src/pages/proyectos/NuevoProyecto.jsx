@@ -11,13 +11,17 @@ import { nanoid } from "nanoid";
 import { ObjContext } from "context/objContext";
 import { useObj } from "context/objContext";
 import { CREAR_PROYECTO } from "graphql/proyectos/mutations";
+import { toast } from 'react-toastify';
+import PrivateLayout from "layouts/PrivateLayout";
+import PrivateComponent from "components/PrivateComponent";
+import { Enum_Rol } from "utils/enums";
 
 const NuevoProyecto = () => {
   const { form, formData, updateFormData } = useFormData();
   const [listaUsuarios, setListaUsuarios] = useState({});
   const { data, loading, error } = useQuery(GET_USUARIOS, {
     variables: {
-      filtro: { rol: "LIDER", estado: "AUTORIZADO" },
+      filtro: { rol: "LIDER" },
     },
   });
 
@@ -32,15 +36,25 @@ const NuevoProyecto = () => {
       const lu = {};
       data.Usuarios.forEach((elemento) => {
         lu[elemento._id] = elemento.correo;
+        
       });
+
 
       setListaUsuarios(lu);
     }
-  }, [data]);
+   }, [data]);
 
   useEffect(() => {
-    console.log("data mutation", mutationData);
-  });
+    if (mutationData) {
+      toast.success('Proyecto creado Satisfactoriamente');
+    }
+  }, [mutationData]);
+
+  useEffect(() => {
+    if (mutationError) {
+      toast.success('Error creado Satisfactoriamente');
+    }
+  }, [mutationError]);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -88,12 +102,14 @@ const NuevoProyecto = () => {
           required={false}
           type="date"
         />
+            
         <DropDown
           label="Líder"
           options={listaUsuarios}
           name="lider"
           required={true}
-        />
+          />
+  
         <Objetivos />
         <ButtonLoading text="Crear Proyecto" loading={mutationLoading} disabled={false}/>
       </form>

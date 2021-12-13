@@ -26,6 +26,8 @@ import "styles/globals.css";
 import "styles/tabla.css";
 import NuevoProyecto from "pages/proyectos/NuevoProyecto";
 import IndexInscripciones from "pages/inscripciones";
+import IndexPerfil from "pages/perfil/index";
+import EditarPerfil from "pages/perfil/editar";
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -74,6 +76,7 @@ function App() {
         identificacion: decoded.identificacion,
         correo: decoded.correo,
         rol: decoded.rol,
+        estado: decoded.estado,
       });
     }
   }, [authToken]);
@@ -94,6 +97,8 @@ function App() {
                 <Route path="/proyectos" element={<IndexProyectos />} />
                 <Route path="/proyectos/nuevo" element={<NuevoProyecto />} />
                 <Route path="/inscripciones" element={<IndexInscripciones />} />
+                <Route path="/perfil" element={<IndexPerfil />} />
+                <Route path="/perfil/editar/:_id" element={<EditarPerfil />} />
                 <Route path="category1" element={<IndexCategory1 />} />
                 <Route path="category1/page1" element={<Category1 />} />
               </Route>

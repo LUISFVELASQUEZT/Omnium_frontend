@@ -1,14 +1,14 @@
 import { useUser } from "context/userContext";
 import React from "react";
 
-const PrivateComponent = ({ roleList, children }) => {
+const EatadoComponent = ({ estadoList, children }) => {
   const { userData } = useUser();
 
-  if (roleList.includes(userData.rol)) {
+  if (estadoList.includes(userData.estado)) {
     return children;
   }
 
   return <></>;
 };
 
-export default PrivateComponent;
+export default EatadoComponent;

@@ -8,6 +8,7 @@ import { LOGIN } from "graphql/auth/mutations";
 import { useAuth } from "context/authContext";
 import { useNavigate } from "react-router-dom";
 import Image from "react-bootstrap/Image";
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -35,6 +36,12 @@ const Login = () => {
       }
     }
   }, [dataMutation, setToken, navigate]);
+
+  useEffect(() => {
+    if (mutationError) {
+      toast.success('Error Login');
+    }
+  }, [mutationError]);
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full p-10">
