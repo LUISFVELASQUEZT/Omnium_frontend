@@ -29,6 +29,11 @@ import IndexInscripciones from "pages/inscripciones";
 import IndexPerfil from "pages/perfil/index";
 import EditarPerfil from "pages/perfil/editar";
 
+let today = new Date();
+let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+let dateTime = date+' '+time;
+
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({
@@ -69,6 +74,7 @@ function App() {
   useEffect(() => {
     if (authToken) {
       const decoded = jwt_decode(authToken);
+      console.log("Hello from APP at", dateTime, " ", decoded.correo, " your identification is: ", decoded.identificacion , " and your role is ", decoded.rol);
       setUserData({
         _id: decoded._id,
         nombre: decoded.nombre,
