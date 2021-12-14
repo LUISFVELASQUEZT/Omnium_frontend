@@ -1,65 +1,45 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "context/authContext";
 import PrivateComponent from "./PrivateComponent";
-import EstadoComponnet from "./EatadoComponent";
-=======
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useAuth } from 'context/authContext';
-import PrivateComponent from './PrivateComponent';
-import { useUser } from 'context/userContext';
-
-let today = new Date();
-let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-let dateTime = date+' '+time;
->>>>>>> 3bfea29b243800da0337692b2d1648e9d2f977da
+import EstadoComponent from "./EatadoComponent";
 
 const SidebarLinks = () => {
-  const { userData } = useUser();
-  console.log( " at " , dateTime, " From SiderBar " , userData.correo, " es un ", userData.rol);
-  
+  /* const { userData } = useUser();
+  console.log( " at " , dateTime, " From SiderBar " , userData.correo, " es un ", userData.rol); */
+
   return (
     <ul className="mt-12">
       <SidebarRoute to="" title="Inicio" icon="fas fa-home" />
-      <PrivateComponent roleList={["ADMINISTRADOR", "LIDER"]}>
-        <SidebarRoute to="/usuarios" title="Usuarios" icon="fas fa-users" />
-      </PrivateComponent>
-      <EstadoComponnet estadoList={["AUTORIZADO"]}>
+      <EstadoComponent estadoList={["AUTORIZADO"]}>
+        <PrivateComponent roleList={["ADMINISTRADOR", "LIDER"]}>
+          <SidebarRoute to="/usuarios" title="Usuarios" icon="fas fa-users" />
+        </PrivateComponent>
         <SidebarRoute
           to="/proyectos"
           title="Proyectos"
           icon="fas fa-briefcase"
         />
-      </EstadoComponnet>
-      <PrivateComponent roleList={["ADMINISTRADOR", "LIDER"]}>
-        <SidebarRoute
-          to="/inscripciones"
-          title="Aprobacion Inscripciones"
-          icon="fas fa-user"
-        />
-      </PrivateComponent>
-<<<<<<< HEAD
+        <PrivateComponent roleList={["ADMINISTRADOR", "LIDER"]}>
+          <SidebarRoute
+            to="/inscripciones"
+            title="Aprobacion Inscripciones"
+            icon="fas fa-user"
+          />
+        </PrivateComponent>
+      </EstadoComponent>
       <SidebarRoute to="/perfil" title="Editar Usuario" icon="fas fa-user" />
-      <PrivateComponent roleList={["ADMINISTRADOR", "LIDER"]}>
-      <SidebarRoute
-        to="/category1"
-        title="Proyectos de un líder"
-        icon="fas fa-clipboard-list"
-      />
-      </PrivateComponent>
+      <EstadoComponent estadoList={["AUTORIZADO"]}>
+        <PrivateComponent roleList={["ADMINISTRADOR", "LIDER"]}>
+          <SidebarRoute
+            to="/category1"
+            title="Proyectos de un líder"
+            icon="fas fa-clipboard-list"
+          />
+        </PrivateComponent>
+      </EstadoComponent>
       {/* <SidebarRoute to="/category1/page1" title="Test" icon="fas fa-car" /> */}
       <Logout />
-=======
-      <PrivateComponent roleList={['ESTUDIANTE']}>
-      <SidebarRoute to='/category1/page1' title='Inscripciones' icon='fas fa-book' />
-      <SidebarRoute to='/usuarios/editar' title='Editar Usuario' icon='fas fa-pen' />
-      </PrivateComponent>
-      <SidebarRoute to='/category1' title='Varios' icon='fas fa-clipboard-list' />
-     <Logout />
->>>>>>> 3bfea29b243800da0337692b2d1648e9d2f977da
     </ul>
   );
 };

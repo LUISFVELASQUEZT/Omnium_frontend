@@ -1,7 +1,7 @@
 import { useUser } from "context/userContext";
 import React from "react";
 
-const EatadoComponent = ({ estadoList, children }) => {
+const EstadoComponent = ({ estadoList, children }) => {
   const { userData } = useUser();
 
   if (estadoList.includes(userData.estado)) {
@@ -11,4 +11,4 @@ const EatadoComponent = ({ estadoList, children }) => {
   return <></>;
 };
 
-export default EatadoComponent;
+export default EstadoComponent;
