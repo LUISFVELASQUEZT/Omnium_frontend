@@ -85,7 +85,7 @@ const AccordionProyecto = ({ proyecto }) => {
               inscripciones={proyecto.inscripciones}
             />
           </PrivateComponent>
-          <div>Liderado Por: </div>
+          <div>Liderado Por: {proyecto.lider.nombre} {proyecto.lider.apellido}</div>
           <div className="flex">
             {proyecto.objetivos.map((objetivo) => {
               return (
