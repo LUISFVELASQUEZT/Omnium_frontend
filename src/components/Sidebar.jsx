@@ -3,10 +3,11 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "context/authContext";
 import PrivateComponent from "./PrivateComponent";
 import EstadoComponent from "./EatadoComponent";
+import { useUser } from "../context/userContext";
 
 const SidebarLinks = () => {
-  /* const { userData } = useUser();
-  console.log( " at " , dateTime, " From SiderBar " , userData.correo, " es un ", userData.rol); */
+  const { userData } = useUser();
+  console.log(  userData.correo, " es un ", userData.rol); 
 
   return (
     <ul className="mt-12">

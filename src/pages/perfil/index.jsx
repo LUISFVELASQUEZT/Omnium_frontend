@@ -6,8 +6,11 @@ import { useParams, Link } from 'react-router-dom';
 //import { Link } from 'react-router-dom';
 import { Enum_Rol, Enum_EstadoUsuario } from 'utils/enums';
 import PrivateRoute from 'components/PrivateRoute';
+import { useUser } from "context/userContext";
 
 const IndexPerfil = () => {
+  
+  const { userData } = useUser();
   const { _id } = useParams();
   const { data, error, loading } = useQuery(GET_PERFIL, {
     variables: { _id },});
@@ -41,9 +44,9 @@ const IndexPerfil = () => {
             </tr>
           </thead>
           <tbody> 
-           {data && data.Usuarios ? (
+           {data && data.userData ? (
               <>
-                {data.Usuarios.map((u) => {
+                {data.userData.map((u) => {
                   return (
                     <tr key={u._id}>
                       <td>{u.nombre}</td>

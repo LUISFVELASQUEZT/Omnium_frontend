@@ -15,8 +15,10 @@ import { toast } from 'react-toastify';
 import PrivateLayout from "layouts/PrivateLayout";
 import PrivateComponent from "components/PrivateComponent";
 import { Enum_Rol } from "utils/enums";
+import { useUser } from "context/userContext";
 
 const NuevoProyecto = () => {
+  const { userData } = useUser();
   const { form, formData, updateFormData } = useFormData();
   const [listaUsuarios, setListaUsuarios] = useState({});
   const { data, loading, error } = useQuery(GET_USUARIOS, {
@@ -101,6 +103,14 @@ const NuevoProyecto = () => {
           label="Fecha de Fin"
           required={false}
           type="date"
+        />
+        <Input
+          label="Liderado por:"
+          type="text"
+          name="Lider"
+          defaultValue={userData.correo}
+          required={true}
+          disabled={true}
         />
             
         <DropDown
