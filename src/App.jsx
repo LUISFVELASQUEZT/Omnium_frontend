@@ -41,7 +41,7 @@ let dateTime = date+' '+time;
 //});
 
 const httpLink = createHttpLink({
-  uri: "https://beminticudeaomnium.herokuapp.com/graphql",
+  uri: "https://beomnium.herokuapp.com/graphql",
 });
 
 
