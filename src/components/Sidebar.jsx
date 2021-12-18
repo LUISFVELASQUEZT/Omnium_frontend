@@ -10,8 +10,11 @@ const SidebarLinks = () => {
   console.log(  userData.correo, " es un ", userData.rol); 
 
   return (
+    
     <ul className="mt-12">
+      <div> Hola {userData.correo} </div>
       <SidebarRoute to="" title="Inicio" icon="fas fa-home" />
+      
       <EstadoComponent estadoList={["AUTORIZADO"]}>
         <PrivateComponent roleList={["ADMINISTRADOR", "LIDER"]}>
           <SidebarRoute to="/usuarios" title="Usuarios" icon="fas fa-users" />

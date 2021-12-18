@@ -65,7 +65,7 @@ const IndexPerfil = () => {
                 })}
               </>
             ) : (
-              <div>No autorizado</div>
+              <div>?No autorizado?</div>
             )}
           </tbody>
         </table>
